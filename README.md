@@ -16,6 +16,10 @@
 3. run `./[name]`;
 4. Continue from step 2 of *without compilation*
 
+## Preview
+
+![Image_Preview](./preview.png)
+
 ### Contributions
 #### Contributions are accepted.
 _Guidelines_
