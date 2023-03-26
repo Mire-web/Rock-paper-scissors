@@ -52,6 +52,12 @@ void start(int user, int computer, char *user_name, int *user_score, int *comput
 	scanf("%d", user_ptr);
 
 	// Conditionals
+	while (*user_ptr > 2 || *user_ptr < 0)
+	{
+		printf("\t\tCheck the options dummy!!");
+		printf("\n\t\t0: Rock 1: Paper 2: Scissors: ");
+		scanf("%d", user_ptr);
+	}
 
 	if (*user_ptr == 0)
 	{

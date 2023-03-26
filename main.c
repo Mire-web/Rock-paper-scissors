@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "main.h"
 
 
@@ -65,5 +66,19 @@ int main(void)
 		printf("      ****        *****************   *****************         ******************   *****************   ***************   ***************\n");
 		printf("      ****        *****************   *****************         ******************   *****************   ***************   ***************\n");
 	}
+	
+	printf("Closing");
+	sleep(1);
+	putchar('.');
+	sleep(3);
+	putchar('.');
+	sleep(2);
+	putchar('.');
+	sleep(1);
+	putchar('\n');
+
+	printf("Press any key to continue...\n");
+	getchar();
+
 	return (0);
 } 
