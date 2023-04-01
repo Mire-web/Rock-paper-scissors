@@ -17,8 +17,10 @@ int main(void)
 	int i;
 	printf("\t\tEnter username: ");
 	scanf("%s", userName);
+	getchar();
 	printf("\t\t(No of Rounds) Best of: ");
 	scanf("%d", &gameCount);
+	getchar();
 	for (i = 0; i < gameCount; i++)
 	start(userChoice, computerChoice, userName, &userScore, &comScore);
 	if (userScore == comScore)
@@ -66,18 +68,15 @@ int main(void)
 		printf("      ****        *****************   *****************         ******************   *****************   ***************   ***************\n");
 		printf("      ****        *****************   *****************         ******************   *****************   ***************   ***************\n");
 	}
-	
 	printf("Closing");
-	sleep(1);
-	putchar('.');
-	sleep(3);
-	putchar('.');
-	sleep(2);
 	putchar('.');
 	sleep(1);
+	putchar('.');
+	sleep(1);
+	putchar('.');
 	putchar('\n');
 
-	printf("Press any key to continue...\n");
+	printf("Press any key to close...");
 	getchar();
 
 	return (0);

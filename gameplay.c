@@ -3,25 +3,7 @@
 #include <time.h>
 #include "main.h"
 
-void decision(int a, int b, char *user_name, int *user_score, int *computer_score)
-{
-	if(a == b)
-	{
-		printf("\t\tDraw\n");
-	}
-	else{
-		if (a == 2 && b == 0 || a == 1 && b == 0 || a == 2 && b == 1)
-		{
-			*user_score += 1;
-			printf("\t\t*****%s Wins*****\n", user_name);
-		}
-		else if (a == 0 && b == 2 || a == 0 && b == 1 || a == 1 && b == 2)
-		{
-			*computer_score += 1;
-			printf("\t\t*****COM Wins*****\n");
-		}
-	}
-}
+void decision(int a, int b, char *user_name, int *user_score, int *computer_score);
 
 void start(int user, int computer, char *user_name, int *user_score, int *computer_score)
 {
@@ -50,6 +32,7 @@ void start(int user, int computer, char *user_name, int *user_score, int *comput
 
 	printf("\n\t\t0: Rock 1: Paper 2: Scissors: ");
 	scanf("%d", user_ptr);
+	getchar();
 
 	// Conditionals
 	while (*user_ptr > 2 || *user_ptr < 0)
@@ -57,6 +40,7 @@ void start(int user, int computer, char *user_name, int *user_score, int *comput
 		printf("\t\tCheck the options dummy!!");
 		printf("\n\t\t0: Rock 1: Paper 2: Scissors: ");
 		scanf("%d", user_ptr);
+		getchar();
 	}
 
 	if (*user_ptr == 0)
@@ -98,4 +82,25 @@ void start(int user, int computer, char *user_name, int *user_score, int *comput
 	}
 
 	decision(*user_ptr, *computer_ptr, user_name, user_score, computer_score);
+}
+
+
+void decision(int a, int b, char *user_name, int *user_score, int *computer_score)
+{
+	if(a == b)
+	{
+		printf("\t\tDraw\n");
+	}
+	else{
+		if (a == 0 && b == 2 || a == 1 && b == 0 || a == 2 && b == 1)
+		{
+			*user_score += 1;
+			printf("\t\t*****%s Wins*****\n", user_name);
+		}
+		else if (a == 2 && b == 0 || a == 0 && b == 1 || a == 1 && b == 2)
+		{
+			*computer_score += 1;
+			printf("\t\t*****COM Wins*****\n");
+		}
+	}
 }
